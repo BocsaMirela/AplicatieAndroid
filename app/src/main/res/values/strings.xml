@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Chocolates</string>
+    <string name="title">Your chocolates:</string>
+    <string name="contentDes">Chocolate Image</string>
+    <string name="description">Description</string>
+    <string name="choose_a_date"> Select Date</string>
+    <string name="choose_the_time">Select Time</string>
+    <string name="image"> Image</string>
+    <string name="delete">DELETE</string>
+    <string name="update">UPDATE</string>
+    <string name="add">ADD NEW NOTE</string>
+    <string name="todo">TODO</string>
+    <string name="logout">LOGOUT</string>
+    <string name="send_to_email">YOUR EMAIL</string>
+    <string name="extra_subject">Extra subject</string>
+    <string name="message">Message</string>
+    <string name="email_invalid">Email invalid</string>
+    <string name="signin">SEND</string>
+    <string name="cancel">CANCEL</string>
+</resources>

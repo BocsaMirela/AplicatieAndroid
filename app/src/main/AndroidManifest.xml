@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.mirela.appAndroid">
+
+    <uses-feature
+            android:name="android.hardware.camera"
+            android:required="true"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <provider
+                android:name="android.support.v4.content.FileProvider"
+                android:authorities="com.example.mirela.trainingproblema3"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths"></meta-data>
+        </provider>
+
+        <activity
+                android:name="com.example.mirela.appAndroid.ui.LoginActivity"
+                android:excludeFromRecents="true"
+                android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="com.example.mirela.appAndroid.ui.AddActivity"
+                android:label="New Chocolate"
+                android:parentActivityName="com.example.mirela.appAndroid.MainActivity"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.example.mirela.appAndroid.MainActivity"/>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO" />
+                <data android:scheme="mailto" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="com.example.mirela.appAndroid.MainActivity"
+                android:label="Chocolates"
+                android:parentActivityName="com.example.mirela.appAndroid.ui.LoginActivity"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.example.mirela.appAndroid.ui.LoginActivity"/>
+        </activity>
+        <activity
+                android:name="com.example.mirela.appAndroid.ui.UpdateActivity"
+                android:label="Update Chocolate"
+                android:parentActivityName="com.example.mirela.appAndroid.MainActivity"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.example.mirela.appAndroid.MainActivity"/>
+        </activity>
+    </application>
+
+</manifest>
